@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="description" content="-" />
+  <meta name="keywords" content="-" />
+  <meta name="author" content="Aliya Bakh" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>-</title>
+  <link rel="stylesheet" href="./pages/index.css" />
+</head>
+
+<body class="page">
+<div class="page__container">
+  <div class="popup">
+    <div class="popup__content">
+      <button type="button" class="popup__exit"></button>
+      <div class="edit">
+        <h2 class="edit__title">Edit Profile</h2>
+        <form name="edit-profile" class="edit__form form">
+          <fieldset class="form__fieldset">
+            <input
+              type="text"
+              class="form__input form__input_type_name"
+              placeholder="Name"
+              name="name"
+            />
+            <input
+              type="text"
+              class="form__input form__input_type_desc"
+              placeholder="More about me"
+              name="description"
+            />
+            <button type="submit" class="form__button">Save</button>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+  </div>
+  <header class="header">
+    <img src="./images/logo.svg" alt="ATU logo" class="header__logo" />
+    <div class="header__divider"></div>
+  </header>
+  <section class="profile">
+    <div class="profile__details">
+      <img
+        src="./images/avatar.png"
+        alt="Photo of Jacques Cousteau"
+        class="profile__picture"
+      />
+      <div class="profile__content">
+        <div class="profile__span">
+          <h1 class="profile__span-name">Jacques Cousteau</h1>
+          <button type="button" class="profile__span-button"></button>
+        </div>
+        <p class="profile__content-info">Explorer</p>
+      </div>
+    </div>
+    <button type="button" class="profile__button"></button>
+  </section>
+  <section class="elements">
+    <ul class="elements__content">
+      <li class="element">
+        <img
+          src="./images/yosemite-valley.png"
+          alt="Photo of Yosemite Valley"
+          class="element__image"
+        />
+        <div class="element__nav">
+          <h2 class="element__nav-title">Yosemite Valley</h2>
+          <button type="button" class="element__button">
+            <img
+              src="./images/heart.svg"
+              alt="like icon"
+              class="element__like"
+            />
+          </button>
+        </div>
+      </li>
+      <li class="element">
+        <img
+          src="./images/lake-louise.png"
+          alt="Photo of Lake Louise"
+          class="element__image"
+        />
+        <div class="element__nav">
+          <h2 class="element__nav-title">Lake Louise</h2>
+          <button type="button" class="element__button">
+            <img
+              src="./images/heart.svg"
+              alt="Heart Icon"
+              class="element__like"
+            />
+          </button>
+        </div>
+      </li>
+      <li class="element">
+        <img
+          src="./images/bald-mountains.png"
+          alt="Photo of Bald Mountains"
+          class="element__image"
+        />
+        <div class="element__nav">
+          <h2 class="element__nav-title">Bald Mountains</h2>
+          <button type="button" class="element__button">
+            <img
+              src="./images/heart.svg"
+              alt="Heart Icon"
+              class="element__like"
+            />
+          </button>
+        </div>
+      </li>
+      <li class="element">
+        <img
+          src="./images/latemar.png"
+          alt="Photo of Latemar"
+          class="element__image"
+        />
+        <div class="element__nav">
+          <h2 class="element__nav-title">Latemar</h2>
+          <button type="button" class="element__button">
+            <img
+              src="./images/heart.svg"
+              alt="Heart Icon"
+              class="element__like"
+            />
+          </button>
+        </div>
+      </li>
+      <li class="element">
+        <img
+          src="./images/vanoise.png"
+          alt="Photo of Vanoise National Park"
+          class="element__image"
+        />
+        <div class="element__nav">
+          <h2 class="element__nav-title">Vanoise National Park</h2>
+          <button type="button" class="element__button">
+            <img
+              src="./images/heart.svg"
+              alt="Heart Icon"
+              class="element__like"
+            />
+          </button>
+        </div>
+      </li>
+      <li class="element">
+        <img
+          src="./images/lago-di-braies.png"
+          alt="Photo of Lago di Braies"
+          class="element__image"
+        />
+        <div class="element__nav">
+          <h2 class="element__nav-title">Lago di Braies</h2>
+          <button type="button" class="element__button">
+            <img
+              src="./images/heart.svg"
+              alt="Heart Icon"
+              class="element__like"
+            />
+          </button>
+        </div>
+      </li>
+    </ul>
+  </section>
+  <footer class="footer">
+    <p class="footer__copyright">© 2021 Around The U.S.</p>
+  </footer>
+</div>
+</body>
+
+
+<script src="./scripts/index.js"></script>
+</html>

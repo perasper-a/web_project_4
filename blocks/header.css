@@ -1,0 +1,9 @@
+.header {
+    padding-top: 45px;
+}
+.header__logo {
+    padding-bottom: 41px;
+}
+.header__divider {
+    border-bottom: 1px solid rgba(84, 84, 84, 0.7);
+}
