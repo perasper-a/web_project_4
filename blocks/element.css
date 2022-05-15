@@ -4,11 +4,13 @@
     display: block;
     margin: auto;
     background-color: #fff;
-    max-width: 282px;;
+    max-width: 282px;
 }
 
 .element__image {
     cursor: pointer;
+    width: 100%;
+
 }
 .element__nav {
     display: flex;
@@ -29,3 +31,10 @@
   white-space: nowrap;
   overflow: hidden;
 }
+
+
+@media screen and (max-width: 950px) {
+    .element {
+      width:350px;
+    }
+  }

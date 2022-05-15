@@ -16,3 +16,18 @@
     font-size: 18px;
     color: #fff;
 }
+
+@media screen and (max-width: 951px) {
+  .page__container {
+  padding-left:30px ;
+  padding-right:30px ;
+  }
+}
+
+
+@media screen and (max-width: 321px) {
+  .page__container {
+  padding-left:0 ;
+  padding-right:0 ;
+  }
+}
