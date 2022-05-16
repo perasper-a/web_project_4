@@ -1,3 +1,18 @@
 .popup {
     display: none;
+    height:100vh;
+    width:100%;
+    position: absolute;
+    z-index:100;
+    display: flex;
+    box-sizing: border-box;
+    background-color: #000;
+    opacity: 50%;
+}
+
+.popup__content {
+    max-width: 430px;
+    max-height: 330px;
+    margin: auto;
+    background-color: #fff;
 }
