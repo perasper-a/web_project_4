@@ -32,6 +32,27 @@
   overflow: hidden;
 }
 
+.element__button {
+  background-color: transparent;
+  background-image : url(../images/heart.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: block;
+  width: 25px;
+  height: 19px;
+  align-self: center;
+}
+
+.element_button:hover {
+  opacity: 50%;
+}
+/*.element_button-active {
+  background-image: url(../images/heart-active.svg);
+
+}*/
 
 @media screen and (max-width: 950px) {
     .element {
