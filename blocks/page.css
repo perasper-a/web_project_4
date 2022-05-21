@@ -24,6 +24,14 @@
   }
 }
 
+@media screen and (max-width: 400px) {
+  .page__container {
+  padding-left:0 ;
+  padding-right:0 ;
+  }
+}
+
+
 
 @media screen and (max-width: 321px) {
   .page__container {
