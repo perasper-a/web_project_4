@@ -1,5 +1,4 @@
 .element {
-  display: flex;
   border-radius: 10px;
   display: block;
   margin: auto;
@@ -24,7 +23,6 @@
   line-height: 29.05px;
   font-weight: 900;
   text-decoration: none;
-  margin: 0;
   color: #000;
   text-overflow: ellipsis;
   white-space: nowrap;

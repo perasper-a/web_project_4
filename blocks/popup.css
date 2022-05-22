@@ -14,7 +14,6 @@
   top: 0;
   left: 0;
   border-radius: 10px;
-  display: flex;
   color: #000;
 }
 .popup__open {
