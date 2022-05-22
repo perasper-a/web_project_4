@@ -1,9 +1,9 @@
-.footer{
-padding-bottom: 60px;
+.footer {
+  padding-bottom: 60px;
 }
 
 .footer__copyright {
-    margin: 0;
-    color:#545454;
-    font-weight: 400;
+  margin: 0;
+  color: #545454;
+  font-weight: 400;
 }

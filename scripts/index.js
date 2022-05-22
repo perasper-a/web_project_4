@@ -1,7 +1,6 @@
 console.log("hello world");
 const popupEl = document.querySelector(".popup");
 
-
 const formEl = document.querySelector(".form");
 const openEditModalButton = document.querySelector(".profile__name-button");
 const popupExitButton = document.querySelector(".popup__exit");
@@ -10,26 +9,31 @@ const profileJob = document.querySelector(".profile__content-info");
 const profileEditButton = document.querySelector(".profile__span-button");
 const NameEdit = document.querySelector(".form__name-input");
 const JobEdit = document.querySelector(".form__input_type_desc");
+const HeartEl = document.querySelector(".element__button");
 
-
-function closePopup () {
+function closePopup() {
   popupEl.classList.remove("popup__open");
 }
 
-profileEditButton.addEventListener("click", function() {
-popupEl.classList.add("popup__open");
- }
-);
+profileEditButton.addEventListener("click", function () {
+  popupEl.classList.add("popup__open");
+});
 
-popupExitButton.addEventListener("click", function() {
-  closePopup ();
-  }
-);
+popupExitButton.addEventListener("click", function () {
+  closePopup();
+});
 
+formEl.addEventListener("submit", function (event) {
+  event.preventDefault();
+  profileName.textContent = NameEdit.value;
+  profileJob.textContent = JobEdit.value;
+  closePopup();
+});
 
-formEl.addEventListener("submit", function(event) {
-event.preventDefault();
-profileName.textContent = NameEdit.value;
-profileJob.textContent = JobEdit.value;
-closePopup ();
+function closePopup() {
+  popupEl.classList.remove("popup__open");
+}
+
+HeartEl.addEventListener("click", function() {
+  HeartEl.classList.toggle("element__button-active");
 });
