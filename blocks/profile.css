@@ -25,6 +25,10 @@
 }
 .profile__content-info {
   margin: 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 415px;
 }
 .profile__span {
   display: flex;

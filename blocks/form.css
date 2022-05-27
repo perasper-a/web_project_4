@@ -32,11 +32,9 @@
   width: 100%;
   background-color: #000000;
   color: #ffffff;
-  margin: 18px auto 36.5px;
-  padding-top: 13.5px;
-  padding-bottom: 18.5px;
-  padding-left: 114px;
-  padding-right: 124px;
+  height: 46px;
+  width: 238px;
+ margin: 18px auto 36.5px;
   display: block;
   border: none;
   border-radius: 2px;

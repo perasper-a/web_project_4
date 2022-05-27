@@ -1,5 +1,5 @@
 .elements {
-  padding-top: 47px;
+  padding-top: 46.3px;
   padding-bottom: 68px;
 }
 
@@ -31,5 +31,9 @@
     gap: 20px;
     align-content: center;
     max-width: 320px;
+  }
+  .elements {
+    padding-top: 36px;
+    padding-bottom: 50px;
   }
 }

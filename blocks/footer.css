@@ -7,3 +7,18 @@
   color: #545454;
   font-weight: 400;
 }
+@media screen and (max-width: 421px) {
+    .footer__copyright {
+      padding-left: 15px;
+      padding-right: 15px;
+      font-size: 14px;
+      line-height: 17px;
+    }
+  }
+
+  @media screen and (max-width: 321px) {
+    .footer__copyright {
+      font-size: 14px;
+      line-height: 17px;
+    }
+  }
