@@ -14,7 +14,7 @@
 .element__nav {
   display: flex;
   justify-content: space-between;
-  margin:31px 15px 31px 21px;
+  margin:25px 15px 25px 21px;
 }
 
 .element__nav-title {
@@ -49,8 +49,3 @@
   opacity: 50%;
 }
 
-@media screen and (max-width: 950px) {
-  .element {
-    width: 350px;
-  }
-}

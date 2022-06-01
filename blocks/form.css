@@ -68,7 +68,7 @@
   padding: 0;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 750px) {
   .form {
     max-width: 300px;
   }
@@ -77,16 +77,37 @@
   }
 }
 
-@media screen and (max-width: 410px) {
+@media screen and (max-width: 550px) {
   .form {
     max-width: 250px;
   }
 
   .form__input {
-    max-width: 250px;
+    max-width: 240px;
   }
   .form__button {
     padding-left: 100px;
     padding-right: 100px;
   }
+}
+
+@media screen and (max-width: 410px) {
+  .form {
+    max-width: 238px;
+    margin: 0;
+    padding: 0;
+  }
+  .form__fieldset{
+    margin:0;
+  }
+  .form__input {
+    max-width: 238px;
+    margin: 0;
+    padding-left: 22px;
+    padding-right: 22px;
+  }
+.form__button {
+  margin-left: 22px;
+   margin-right: 22px;
+}
 }

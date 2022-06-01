@@ -20,7 +20,7 @@
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  gap: 16px;
+  gap: 7px;
   padding: 22px 0 21px;
 }
 .profile__content-info {
@@ -54,9 +54,8 @@
   background-size: 10px;
   border: 1px solid #ffffff;
   background-position: center;
-  margin-top: 15px;
-  margin-bottom: 0;
-  max-height: 24px;
+  align-self: center;
+  height: 24px;
   width: 24px;
 }
 .profile__span-button:hover {
@@ -77,9 +76,11 @@
   background-repeat: no-repeat;
   background-size: 22px;
   width: 150px;
+  height:50px;
   display: block;
   border: 2px solid #ffffff;
   border-radius: 2px;
+  padding:0;
   margin-top: 35px;
   margin-bottom: 35px;
   background-color: transparent;
@@ -145,37 +146,36 @@
 }
 @media screen and (max-width: 601px) {
   .profile__button {
-    padding: 8% 40%;
+    width:282px;
+    height:50px;
+    padding:0;
+    margin:auto;
   }
 }
 
 @media screen and (max-width: 450px) {
-  .profile__span-names {
-    font-size: 36px;
-  }
-}
 
-@media screen and (max-width: 380px) {
-  .profile__span-names {
-    font-size: 30px;
+  .profile__span {
+    gap:10px;
   }
+  .profile__span-names {
+    font-size: 32px;
+  }
+  
 }
 
 @media screen and (max-width: 360px) {
-  .profile__span-names {
-    font-size: 27px;
-  }
-}
-
-@media screen and (max-width: 321px) {
   .profile {
     max-width: 320px;
+  }
+
+  .profile__span-names {
+    font-size: 27px;
   }
   .profile__button {
     padding: 23px 139px;
     max-width: 282px;
   }
-
   .profile__picture {
     margin: auto;
     max-width: 120px;
@@ -196,3 +196,4 @@
     line-height: 17px;
   }
 }
+

@@ -13,21 +13,10 @@
   max-width: 880px;
 }
 
-@media screen and (max-width: 951px) {
-  .elements__content {
-    grid-template-columns: repeat(auto-fit, minmax(363px, 1fr));
-  }
-}
-
-@media screen and (max-width: 951px) {
-  .elements__content {
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  }
-}
 
 @media screen and (max-width: 321px) {
   .elements__content {
-    grid-template-columns: repeat(auto-fit, minmax(283px, 1fr));
+
     gap: 20px;
     align-content: center;
     max-width: 320px;

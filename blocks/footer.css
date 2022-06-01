@@ -7,7 +7,7 @@
   color: #545454;
   font-weight: 400;
 }
-@media screen and (max-width: 421px) {
+@media screen and (max-width: 410px) {
     .footer__copyright {
       padding-left: 15px;
       padding-right: 15px;
