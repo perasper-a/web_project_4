@@ -13,10 +13,8 @@
   max-width: 880px;
 }
 
-
 @media screen and (max-width: 321px) {
   .elements__content {
-
     gap: 20px;
     align-content: center;
     max-width: 320px;

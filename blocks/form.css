@@ -34,7 +34,7 @@
   color: #ffffff;
   height: 46px;
   width: 238px;
- margin: 18px auto 36.5px;
+  margin: 18px auto 36.5px;
   display: block;
   border: none;
   border-radius: 2px;
@@ -97,8 +97,8 @@
     margin: 0;
     padding: 0;
   }
-  .form__fieldset{
-    margin:0;
+  .form__fieldset {
+    margin: 0;
   }
   .form__input {
     max-width: 238px;
@@ -106,8 +106,8 @@
     padding-left: 22px;
     padding-right: 22px;
   }
-.form__button {
-  margin-left: 22px;
-   margin-right: 22px;
-}
+  .form__button {
+    margin-left: 22px;
+    margin-right: 22px;
+  }
 }

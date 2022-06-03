@@ -10,6 +10,10 @@ v------------------------------------v
 ```
 
 ^------------------------------------^
+## Overview 
+
+"Around the U.S" is an interactive project, which allows you to showcase different photographs and customize your profile.
+
 ## Project link
 
 [From Hometown to Hometown](https://perasper-a.github.io/web_project_4/)

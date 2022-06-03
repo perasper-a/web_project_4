@@ -60,7 +60,6 @@
   padding: 34px 64px 0 36px;
 }
 
-
 @media screen and (max-width: 750px) {
   .popup__content {
     max-width: 390px;
@@ -68,35 +67,32 @@
   .popup__form-title {
     padding-top: 38px;
   }
-
 }
 
 @media screen and (max-width: 550px) {
   .popup__content {
     width: 300px;
   }
-  
-    .popup__form-title {
-      padding-left: 30px;
-    }
-    .popup__exit {
-      height:26px;
-      width: 26px;
-    }
-  }
 
-  @media screen and (max-width: 410px) {
-    .popup__content {
-      max-width: 290px;
-    }
-    .popup__form-title {
-      width: 238px;
-      padding: 25px 22px 76px 22px;
-margin:0;
-    }
-    .popup__exit {
-  right: 0;
-    }
-
+  .popup__form-title {
+    padding-left: 30px;
   }
-  
+  .popup__exit {
+    height: 26px;
+    width: 26px;
+  }
+}
+
+@media screen and (max-width: 410px) {
+  .popup__content {
+    max-width: 290px;
+  }
+  .popup__form-title {
+    width: 238px;
+    padding: 25px 22px 76px 22px;
+    margin: 0;
+  }
+  .popup__exit {
+    right: 0;
+  }
+}

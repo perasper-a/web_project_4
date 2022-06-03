@@ -9,12 +9,12 @@
 .element__image {
   cursor: pointer;
   width: 100%;
-  display:block;
+  display: block;
 }
 .element__nav {
   display: flex;
   justify-content: space-between;
-  margin:25px 15px 25px 21px;
+  margin: 25px 15px 25px 21px;
 }
 
 .element__nav-title {
@@ -48,4 +48,3 @@
 .element__button:hover {
   opacity: 50%;
 }
-

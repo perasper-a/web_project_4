@@ -8,17 +8,17 @@
   font-weight: 400;
 }
 @media screen and (max-width: 410px) {
-    .footer__copyright {
-      padding-left: 15px;
-      padding-right: 15px;
-      font-size: 14px;
-      line-height: 17px;
-    }
+  .footer__copyright {
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: 14px;
+    line-height: 17px;
   }
+}
 
-  @media screen and (max-width: 321px) {
-    .footer__copyright {
-      font-size: 14px;
-      line-height: 17px;
-    }
+@media screen and (max-width: 321px) {
+  .footer__copyright {
+    font-size: 14px;
+    line-height: 17px;
   }
+}
