@@ -31,48 +31,22 @@
 .form__button {
   background-color: #000000;
   color: #ffffff;
-  height: 46px;
-  width: 238px;
-  margin: 18px auto 36.5px;
+  height: 50px;
+  padding: 0;
   display: block;
   border: none;
   border-radius: 2px;
+  width: 100%;
+  text-align: center;
 }
 .form__button:hover {
   opacity: 80%;
   cursor: pointer;
 }
-.form__button_disabled {
-  background-color: #ffffff;
-  color: rgba(0, 0, 0, 1);
-  border: 1px solid rgba(0, 0, 0, 1);
-  opacity: 20%;
-}
-.form__input_type-error {
-  padding: 0;
-  padding-bottom: 5px;
-  border: none;
-  margin: 0;
-  border-bottom: 1px solid red;
-  color: rgba(255, 0, 0, 1);
-  font-size: 12px;
-  line-height: 14.52px;
-  min-height: 17px;
-}
-.form__input-error {
-  color: rgba(255, 0, 0, 1);
-  font-size: 12px;
-  line-height: 14.52px;
-  min-height: 17px;
-  padding: 0;
-}
 
 @media screen and (max-width: 750px) {
   .form {
     max-width: 300px;
-  }
-  .form__button {
-    max-width: 250px;
   }
 }
 
@@ -85,8 +59,9 @@
     max-width: 240px;
   }
   .form__button {
-    padding-left: 100px;
-    padding-right: 100px;
+    font-size: 14px;
+    line-height: 17px;
+    font-weight: 400;
   }
 }
 
@@ -102,11 +77,5 @@
   .form__input {
     max-width: 238px;
     margin: 0;
-    padding-left: 22px;
-    padding-right: 22px;
-  }
-  .form__button {
-    margin-left: 22px;
-    margin-right: 22px;
   }
 }

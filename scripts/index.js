@@ -1,4 +1,3 @@
-
 const popupEl = document.querySelector(".popup");
 
 const formEl = document.querySelector(".form");
@@ -11,6 +10,8 @@ const NameEdit = document.querySelector(".form__input_type_name");
 const JobEdit = document.querySelector(".form__input_type_desc");
 
 function openPopup() {
+  NameEdit.value = profileName.textContent;
+  JobEdit.value = profileJob.textContent;
   popupEl.classList.add("popup_open");
 }
 
@@ -18,23 +19,14 @@ function closePopup() {
   popupEl.classList.remove("popup_open");
 }
 
-profileEditButton.addEventListener("click", openPopup); {
-   openPopup();
-};
+profileEditButton.addEventListener("click", openPopup);
 
-popupExitButton.addEventListener("click", closePopup ); {
+popupExitButton.addEventListener("click", closePopup);
+
+formEl.addEventListener("submit", event);
+{
+  event.preventDefault();
+  profileName.textContent = NameEdit.value;
+  profileJob.textContent = JobEdit.value;
   closePopup();
-};
-
-NameEdit.value = profileName.textContent;
-JobEdit.value = profileJob.textContent;
-
-formEl.addEventListener("submit", closePopup); { 
-  event.preventDefault(); 
-  profileName.textContent = NameEdit.value; 
-  profileJob.textContent = JobEdit.value; 
-  closePopup(); 
-}; 
-
-
-
+}

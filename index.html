@@ -9,31 +9,33 @@
     <title>Around the US - An Interactive G0allery</title>
     <link rel="stylesheet" href="./pages/index.css" />
   </head>
+  <div class="popup">
+    <div class="popup__content">
+      <button type="button" class="popup__exit"></button>
+      <h2 class="popup__form-title">Edit Profile</h2>
+      <form action="#" name="edit-profile" class="form">
+        <fieldset class="form__fieldset">
+          <input
+            type="text"
+            class="form__input form__input_type_name"
+            placeholder="Name"
+            name="name"
+            required
+          />
+          <input
+            type="text"
+            class="form__input form__input_type_desc"
+            placeholder="More about me"
+            name="description"
+            required
+          />
+          <button type="submit" class="form__button">Save</button>
+        </fieldset>
+      </form>
+    </div>
+  </div>
 
   <body class="page">
-    <div class="popup">
-      <div class="popup__content">
-        <button type="button" class="popup__exit"></button>
-        <h2 class="popup__form-title">Edit Profile</h2>
-        <form action="#" name="edit-profile" class="form">
-          <fieldset class="form__fieldset">
-            <input
-              type="text"
-              class="form__input form__input_type_name"
-              placeholder="Name"
-              name="name"
-            />
-            <input
-              type="text"
-              class="form__input form__input_type_desc"
-              placeholder="More about me"
-              name="description"
-            />
-            <button type="submit" class="form__button">Save</button>
-          </fieldset>
-        </form>
-      </div>
-    </div>
     <div class="page__container">
       <header class="header">
         <img src="./images/logo.svg" alt="ATU logo" class="header__logo" />
