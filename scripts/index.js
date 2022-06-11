@@ -23,10 +23,11 @@ profileEditButton.addEventListener("click", openPopup);
 
 popupExitButton.addEventListener("click", closePopup);
 
-formEl.addEventListener("submit", event);
-{
+function handleSubmit(event) {
   event.preventDefault();
   profileName.textContent = NameEdit.value;
   profileJob.textContent = JobEdit.value;
   closePopup();
-}
+} 
+
+formEl.addEventListener("submit", handleSubmit); 
