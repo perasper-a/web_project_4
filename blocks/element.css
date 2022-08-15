@@ -45,6 +45,21 @@
   align-self: center;
 }
 
+.element__trash-button {
+  background-image: url(../images/bin.svg);
+  background-color: transparent;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 19.5px;
+  width: 18px;
+  border: none;
+  margin-top: 18px;
+  margin-left: 250px;
+  margin-right: 15px;
+  position: absolute;
+  cursor: pointer;
+}
+
 .element__button:hover {
   opacity: 50%;
 }
