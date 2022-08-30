@@ -14,9 +14,9 @@
   <body class="page">
 
  <!-- second popup -->
- <div class="card-popup">
-  <div class="card-popup__content">
-    <button type="button" class="card-popup__exit"></button>
+ <div class="popup popup_type-card">
+  <div class="popup__content">
+    <button type="button" class="popup__exit popup__exit-card"></button>
     <h2 class="popup__title">New Place</h2>
     <form
       name="add-card"
@@ -52,10 +52,20 @@
     </form>
   </div>
 </div>
+<div class="popup popup_type-preview">
+  <div class="popup__content popup__content-preview">
+    <button type="button" class="popup__exit popup__exit-preview"></button>
+    <img
+            src=""
+            alt=""
+            class="popup__image"
+          >
+  </div>
+</div>
       
-  <div class="popup">
+  <div class="popup popup_type-profile">
     <div class="popup__content">
-      <button type="button" class="popup__exit"></button>
+      <button type="button" class="popup__exit popup__exit-profile"></button>
       <h2 class="popup__title">Edit Profile</h2>
       <form action="#" name="edit-profile" class="form">
         <fieldset class="form__fieldset">
@@ -78,6 +88,7 @@
       </form>
     </div>
   </div>
+
     <div class="page__container">
       <header class="header">
         <img src="./images/logo.svg" alt="ATU logo" class="header__logo" />
@@ -100,82 +111,7 @@
         <button type="button" class="profile__button"></button>
       </section>
       <section class="elements">
-       
         <ul class="elements__content">
-
-         <!-- <li class="element">
-            <button class="element__trash-button" type="button"></button>
-            <img
-              src="./images/yosemite-valley.png"
-              alt="Photo of Yosemite Valley"
-              class="element__image"
-            />
-            <div class="element__nav">
-              <h2 class="element__nav-title">Yosemite Valley</h2>
-              <button type="button" class="element__button"></button>
-            </div>
-          </li>
-          <li class="element">
-            <button class="element__trash-button" type="button"></button>
-            <img
-              src="./images/lake-louise.png"
-              alt="Photo of Lake Louise"
-              class="element__image"
-            />
-            <div class="element__nav">
-              <h2 class="element__nav-title">Lake Louise</h2>
-              <button type="button" class="element__button"></button>
-            </div>
-          </li>
-          <li class="element">
-            <button class="element__trash-button" type="button"></button>
-            <img
-              src="./images/bald-mountains.png"
-              alt="Photo of Bald Mountains"
-              class="element__image"
-            />
-            <div class="element__nav">
-              <h2 class="element__nav-title">Bald Mountains</h2>
-              <button type="button" class="element__button"></button>
-            </div>
-          </li>
-          <li class="element">
-            <button class="element__trash-button" type="button"></button>
-            <img
-              src="./images/latemar.png"
-              alt="Photo of Latemar"
-              class="element__image"
-            />
-            <div class="element__nav">
-              <h2 class="element__nav-title">Latemar</h2>
-              <button type="button" class="element__button"></button>
-            </div>
-          </li>
-          <li class="element">
-            <button class="element__trash-button" type="button"></button>
-            <img
-              src="./images/vanoise.png"
-              alt="Photo of Vanoise National Park"
-              class="element__image"
-            />
-            <div class="element__nav">
-              <h2 class="element__nav-title">Vanoise National Park</h2>
-              <button type="button" class="element__button"></button>
-            </div>
-          </li>
-          <li class="element">
-            <button class="element__trash-button" type="button"></button>
-            <img
-              src="./images/lago-di-braies.png"
-              alt="Photo of Lago di Braies"
-              class="element__image"
-            />
-            <div class="element__nav">
-              <h2 class="element__nav-title">Lago di Braies</h2>
-              <button type="button" class="element__button"></button>
-            </div>
-          </li>
-          -->
         </ul>
       </section>
       <footer class="footer">
@@ -184,7 +120,7 @@
       <template id="card-template">
         <li class="element">
           <button class="element__trash-button" type="button"></button>
-          <div class="element__image" style=""></div>
+          <img class="element__image" style="">
           <div class="element__nav">
             <h2 class="element__nav-title"></h2>
             <button type="button" class="element__button"></button>
@@ -195,8 +131,6 @@
 <script src="./scripts/index.js"></script>
 
     
-
-
  
   </body>
 </html>

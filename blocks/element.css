@@ -3,10 +3,15 @@
   display: block;
   margin: auto;
   background-color: #fff;
-  max-width: 282px;
+  width: 282px;
 }
 
 .element__image {
+  height: 282px;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
   cursor: pointer;
   width: 100%;
   display: block;
@@ -28,9 +33,7 @@
   white-space: nowrap;
   overflow: hidden;
 }
-.element__button-active {
-  background-image: url(../images/heart-active.svg);
-}
+
 .element__button {
   background-color: transparent;
   background-image: url(../images/heart.svg);
@@ -43,6 +46,11 @@
   width: 25px;
   height: 19px;
   align-self: center;
+}
+
+.element__button-active {
+  background-image: url(../images/black-heart.svg);
+
 }
 
 .element__trash-button {
