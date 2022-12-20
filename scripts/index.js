@@ -60,11 +60,6 @@ const renderCard = (card) => {
   elementsList.prepend(cardElement);
 };
 
-function togglePopup(popupWindow) {
-  if (!popupWindow.classList.contains("popup_open")) {
-  }
-  popupWindow.classList.toggle("popup_open");
-}
 
 function openPopup(popup) {
   popup.classList.add("popup_open");
@@ -115,7 +110,7 @@ profileEditButton.addEventListener("click", function () {
   jobEdit.value = profileJob.textContent;
 });
 
-addCardButton.addEventListener("click", () => togglePopup(cardPopupEl));
+addCardButton.addEventListener("click", () => openPopup(cardPopupEl));
 
 profileformEl.addEventListener("submit", function (event) {
   event.preventDefault();
@@ -137,3 +132,11 @@ exitButtons.forEach((button) => {
   const popup = button.closest(".popup");
   button.addEventListener("click", () => closePopup(popup));
 });
+
+
+
+document.addEventListener("keydown", function (evt) {
+  if (evt.key === "Escape") {
+    closePopup(evt);
+  }; 
+}); 
