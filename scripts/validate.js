@@ -1,5 +1,5 @@
-// enabling validation by calling enableValidation()
-// pass all the settings on call
+
+
 const hasValidInputs = (inputList) => {
  return inputList.every((input) => input.validity.valid === true )
 };
@@ -14,20 +14,19 @@ const toggleButton = (inputList, button, settings ) => {
  }
 };
 
+
 const hideInputError = (input, formEl, {errorClass}) => {
   const errorSpan = formEl.querySelector("#" + input.id + "-error");
-
   console.log(input.validationMessage);
   errorSpan.textContent = "";
-  input.classList.remove(errorClass);
+  errorSpan.classList.remove(errorClass);
 };
 
 const showInputError = (input, formEl, {errorClass}) => {
   const errorSpan = formEl.querySelector("#" + input.id + "-error");
-
-  console.log(input.validationMessage);
-  errorSpan.textContent = input.validationMessage
-  input.classList.add(errorClass);
+  const error = input.validationMessage;
+  errorSpan.textContent = error;
+  errorSpan.classList.add(errorClass);
 };
 
 const checkInputValidity = (formEl, input, settings) => {
@@ -38,6 +37,7 @@ if(input.validity.valid) {
   }
 };
 
+
 const setEventListeners = (formEl, settings) => {
  const inputList = [...formEl.querySelectorAll(settings.inputSelector)];
  const submitButton = formEl.querySelector(settings.submitButtonSelector);
@@ -47,6 +47,12 @@ const setEventListeners = (formEl, settings) => {
       toggleButton(inputList, submitButton , settings);
      });
    })
+
+  formEl.addEventListener('reset', () => {
+    setTimeout(() => {
+      toggleButton(inputList, submitButton, settings);
+    }, 0)
+  })
 };
 
 
@@ -58,6 +64,7 @@ const enableValidation = (settings) => {
   
     });
 };
+
 
 enableValidation({
     formSelector: ".popup__form",

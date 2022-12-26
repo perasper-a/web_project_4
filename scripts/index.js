@@ -1,6 +1,9 @@
+
+const submitButtonSelector = document.querySelector(".popup__button");
 const profilePopupEl = document.querySelector(".popup_type-profile");
 const cardPopupEl = document.querySelector(".popup_type-card");
 const previewPopupEl = document.querySelector(".popup_type-preview");
+const popupSelector = document.querySelector(".popup");
 
 const profileformEl = document.querySelector(".profile-form");
 const cardFormEl = document.querySelector(".card-form");
@@ -102,7 +105,6 @@ function handleImagePreview(card) {
   openPopup(previewPopupEl);
 }
 
-const onBinButtonClick = () => {};
 
 profileEditButton.addEventListener("click", function () {
   openPopup(profilePopupEl);
@@ -110,7 +112,11 @@ profileEditButton.addEventListener("click", function () {
   jobEdit.value = profileJob.textContent;
 });
 
-addCardButton.addEventListener("click", () => openPopup(cardPopupEl));
+
+addCardButton.addEventListener("click", function () {
+   openPopup(cardPopupEl)
+  
+  });
 
 profileformEl.addEventListener("submit", function (event) {
   event.preventDefault();
@@ -135,8 +141,10 @@ exitButtons.forEach((button) => {
 
 
 
-document.addEventListener("keydown", function (evt) {
+document.addEventListener("keydown", function (evt){
   if (evt.key === "Escape") {
-    closePopup(evt);
+    const openedPopup = document.querySelector(".popup_open");
+    closePopup(openedPopup); 
   }; 
-}); 
+});
+

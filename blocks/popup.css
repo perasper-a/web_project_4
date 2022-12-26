@@ -86,7 +86,7 @@
   line-height: 15px;
 }
 .popup__button_disabled{
-  opacity : 0.8;
+  opacity : 0.5;
 }
 
 @media screen and (max-width: 750px) {
