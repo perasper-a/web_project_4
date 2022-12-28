@@ -1,3 +1,4 @@
+/// index
 
 const submitButtonSelector = document.querySelector(".popup__button");
 const profilePopupEl = document.querySelector(".popup_type-profile");
@@ -98,6 +99,12 @@ function createCardEl(card) {
   return cardElement;
 }
 
+function disableButton(button) {
+  button.classList.add("popup__button_disabled");
+  button.disabled = true;
+}
+
+
 function handleImagePreview(card) {
   previewCaption.textContent = card.name;
   popupImage.src = card.link;
@@ -112,10 +119,12 @@ profileEditButton.addEventListener("click", function () {
   jobEdit.value = profileJob.textContent;
 });
 
+const addCardSubmitButton = document.querySelector(".form__button_add-card");
 
 addCardButton.addEventListener("click", function () {
    openPopup(cardPopupEl)
-  
+   cardFormEl.reset();
+  disableButton(addCardSubmitButton);
   });
 
 profileformEl.addEventListener("submit", function (event) {
@@ -140,11 +149,27 @@ exitButtons.forEach((button) => {
 });
 
 
-
 document.addEventListener("keydown", function (evt){
+  const openedPopup = document.querySelector(".popup_open");
   if (evt.key === "Escape") {
-    const openedPopup = document.querySelector(".popup_open");
     closePopup(openedPopup); 
   }; 
 });
 
+profilePopupEl.addEventListener('click', (event) => {
+  if (event.target.classList.contains('popup') || event.target.classList.contains('popup__close')) {
+    closePopup(profilePopupEl);
+  }
+})
+
+cardPopupEl.addEventListener('click', (event) => {
+  if (event.target.classList.contains('popup') || event.target.classList.contains('popup__close')) {
+    closePopup(cardPopupEl);
+  }
+})
+
+previewPopupEl.addEventListener('click', (event) => {
+  if (event.target.classList.contains('popup') || event.target.classList.contains('popup__close')) {
+    closePopup(previewPopupEl);
+  }
+})
