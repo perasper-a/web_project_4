@@ -1,6 +1,5 @@
 /// index
 
-const submitButtonSelector = document.querySelector(".popup__button");
 const profilePopupEl = document.querySelector(".popup_type-profile");
 const cardPopupEl = document.querySelector(".popup_type-card");
 const previewPopupEl = document.querySelector(".popup_type-preview");
@@ -67,10 +66,12 @@ const renderCard = (card) => {
 
 function openPopup(popup) {
   popup.classList.add("popup_open");
+  document.addEventListener('keydown', closeByEscape);
 }
 
 function closePopup(popup) {
   popup.classList.remove("popup_open");
+  document.removeEventListener('keydown', closeByEscape);
 }
 
 function createCardEl(card) {
@@ -99,10 +100,7 @@ function createCardEl(card) {
   return cardElement;
 }
 
-function disableButton(button) {
-  button.classList.add("popup__button_disabled");
-  button.disabled = true;
-}
+
 
 
 function handleImagePreview(card) {
@@ -124,7 +122,6 @@ const addCardSubmitButton = document.querySelector(".form__button_add-card");
 addCardButton.addEventListener("click", function () {
    openPopup(cardPopupEl)
    cardFormEl.reset();
-  disableButton(addCardSubmitButton);
   });
 
 profileformEl.addEventListener("submit", function (event) {
@@ -143,33 +140,23 @@ cardFormEl.addEventListener("submit", function (e) {
 
 initialCards.forEach(renderCard);
 
-exitButtons.forEach((button) => {
-  const popup = button.closest(".popup");
-  button.addEventListener("click", () => closePopup(popup));
-});
 
-
-document.addEventListener("keydown", function (evt){
-  const openedPopup = document.querySelector(".popup_open");
-  if (evt.key === "Escape") {
-    closePopup(openedPopup); 
-  }; 
-});
-
-profilePopupEl.addEventListener('click', (event) => {
-  if (event.target.classList.contains('popup') || event.target.classList.contains('popup__close')) {
-    closePopup(profilePopupEl);
+function closeByEscape(evt) {
+  if (evt.key === 'Escape') {
+    const openedPopup = document.querySelector(".popup_open");
+    closePopup(openedPopup);
   }
-})
+}
+ 
+const popups = document.querySelectorAll('.popup')
 
-cardPopupEl.addEventListener('click', (event) => {
-  if (event.target.classList.contains('popup') || event.target.classList.contains('popup__close')) {
-    closePopup(cardPopupEl);
-  }
-})
-
-previewPopupEl.addEventListener('click', (event) => {
-  if (event.target.classList.contains('popup') || event.target.classList.contains('popup__close')) {
-    closePopup(previewPopupEl);
-  }
-})
+popups.forEach((popup) => {
+   popup.addEventListener('mousedown', (evt) => {
+      if (evt.target.classList.contains('popup_open')) {
+         closePopup(popup)
+          }
+       if (evt.target.classList.contains('popup__exit')) {
+          closePopup(popup)
+           }
+        })
+    });
