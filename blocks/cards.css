@@ -1,9 +1,9 @@
-.elements {
+.cards {
   padding-top: 50px;
   padding-bottom: 68px;
 }
 
-.elements__content {
+.cards__list {
   list-style: none;
   padding: 0;
   margin: 0 auto;
@@ -14,12 +14,12 @@
 }
 
 @media screen and (max-width: 321px) {
-  .elements__content {
+  .cards__list {
     gap: 20px;
     align-content: center;
     max-width: 320px;
   }
-  .elements {
+  .cards {
     padding-top: 36px;
     padding-bottom: 50px;
   }

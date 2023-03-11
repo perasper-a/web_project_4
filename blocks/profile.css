@@ -31,13 +31,13 @@
   overflow: hidden;
   max-width: 415px;
 }
-.profile__span {
+.profile__name {
   display: flex;
   flex-direction: row;
   gap: 18px;
   margin: 0;
 }
-.profile__span-names {
+.profile__name-info {
   font-size: 42px;
   line-height: 48px;
   font-weight: 500;
@@ -48,7 +48,7 @@
   margin: 0;
 }
 
-.profile__span-button {
+.profile__name-button {
   background-image: url(../images/edit.svg);
   background-color: transparent;
   background-repeat: no-repeat;
@@ -59,7 +59,7 @@
   height: 24px;
   width: 24px;
 }
-.profile__span-button:hover {
+.profile__name-button:hover {
   opacity: 60%;
   cursor: pointer;
 }
@@ -71,7 +71,7 @@
   overflow: hidden;
   max-width: 100%;
 }
-.profile__button {
+.profile__button-add {
   background-image: url(../images/add.svg);
   background-position: center;
   background-repeat: no-repeat;
@@ -86,7 +86,7 @@
   margin-bottom: 35px;
   background-color: transparent;
 }
-.profile__button:hover {
+.profile__button-add:hover {
   opacity: 60%;
   cursor: pointer;
 }

@@ -28,6 +28,11 @@
   line-height: 17px;
   margin: 0;
 }
+
+.form__button_disabled{
+  opacity : 0.5;
+}
+
 .form__button {
   background-color: #000000;
   color: #ffffff;
@@ -42,6 +47,26 @@
 .form__button:hover {
   opacity: 80%;
   cursor: pointer;
+}
+
+
+.form__input_type-error {
+  padding: 0;
+  padding-bottom: 5px;
+  border: none;
+  margin: 0;
+  border-bottom: 1px solid red;
+  color: rgba(255, 0, 0, 1);
+  font-size: 12px;
+  line-height: 14.52px;
+  min-height: 17px;
+}
+.form__input-error {
+  color: rgba(255, 0, 0, 1);
+  font-size: 12px;
+  line-height: 14.52px;
+  min-height: 17px;
+  padding: 0;
 }
 
 @media screen and (max-width: 750px) {

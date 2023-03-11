@@ -1,4 +1,4 @@
-.element {
+.card {
   border-radius: 10px;
   display: block;
   margin: auto;
@@ -6,7 +6,7 @@
   width: 282px;
 }
 
-.element__image {
+.card__image {
   height: 282px;
   background-repeat: no-repeat;
   background-position: center;
@@ -16,13 +16,13 @@
   background-size: cover;
   
 }
-.element__nav {
+.card__nav {
   display: flex;
   justify-content: space-between;
   margin: 25px 15px 25px 21px;
 }
 
-.element__nav-title {
+.card__nav-title {
   margin: 0;
   font-size: 24px;
   line-height: 29.05px;
@@ -34,7 +34,7 @@
   overflow: hidden;
 }
 
-.element__button {
+.card__like-button {
   background-color: transparent;
   background-image: url(../images/heart.svg);
   background-repeat: no-repeat;
@@ -48,11 +48,11 @@
   align-self: center;
 }
 
-.element__button-active {
+.card__button-active {
   background-image: url(../images/black-heart.svg);
 }
 
-.element__trash-button {
+.card__trash-button {
   background-image: url(../images/bin.svg);
   background-color: transparent;
   background-position: center;
@@ -67,6 +67,21 @@
   cursor: pointer;
 }
 
-.element__button:hover {
+.card__like-button:hover {
   opacity: 50%;
+}
+
+
+@media screen and (max-width: 960px) {
+  .card {
+    width: 363px;
+  }
+  .card__image {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .card {
+    width: 282px;
+  }
 }
