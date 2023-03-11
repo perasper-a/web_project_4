@@ -7,7 +7,7 @@ import { closeModal, handleImagePreview, openModal } from "./utils.js";
 const settings = {
   inputSelector: ".form__input",
   submitButtonSelector: ".form__button",
-  inactiveButtonClass: ".form__button_disabled",
+  inactiveButtonClass: "form__button_disabled",
   inputErrorClass: ".form__input_type-error",
   errorClass: ".form__input-error"
 };
