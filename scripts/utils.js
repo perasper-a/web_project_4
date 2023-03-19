@@ -1,33 +1,34 @@
 // imports
-export const openModal = (modal) => {
-  modal.classList.add("popup_open");
+export const openedPopup = (popup) => {
+  popup.classList.add("popup_open");
   document.addEventListener("keydown", handleKeyDown);
   document.addEventListener("mousedown", handleMouseDown);
 };
 
 // functions
-const previewModal = document.querySelector(".popup_type-preview");
+const previewPopup = document.querySelector(".popup_type-preview");
 
-const popupImage = previewModal.querySelector(".popup__image");
+const popupImage = previewPopup.querySelector(".popup__image");
 export function handleImagePreview(data) {
   popupImage.src = data.link;
   popupImage.alt = `image preview${data.name}`;
-  openModal(previewModal);
+  openedPopup(previewPopup);
 }
 const handleKeyDown = (evt) => {
-  const openModal = document.querySelector(".popup_open");
-  if (evt.key === "Escape" && openModal) {
-    closeModal(openModal);
+  const openedPopup = document.querySelector(".popup_open");
+  if (evt.key === "Escape") {
+    const openedPopup = document.querySelector(".popup_open");
+    openedPopup && closePopup(openedPopup);
   }
 };
 const handleMouseDown = (evt) => {
-  const openModal = document.querySelector(".popup_open");
+  const openedPopup = document.querySelector(".popup_open");
   if (evt.target.classList.contains("popup_open")) {
-    closeModal(openModal);
+    closePopup(evt.target);
   }
 };
-export const closeModal = (modal) => {
-  modal.classList.remove("popup_open");
+export const closePopup = (popup) => {
+  popup.classList.remove("popup_open");
   document.removeEventListener("keydown", handleKeyDown);
   document.removeEventListener("mousedown", handleMouseDown);
 };

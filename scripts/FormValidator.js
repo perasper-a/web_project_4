@@ -2,6 +2,7 @@ class FormValidator {
   constructor(settings, formElement) {
     this.settings = settings;
     this.formElement = formElement;
+    this.button = this.formElement.querySelector(settings.submitButtonSelector)
   }
   resetFormErrors() {
     this.inputList.forEach((input) => {
@@ -12,22 +13,19 @@ class FormValidator {
   _hasValidInputs = () =>
     this.inputList.every((input) => input.validity.valid === true);
 
-  _enableButton(button) {
-    button.classList.remove(this.settings.inactiveButtonClass);
-    button.disabled = false;
+  enableButton() {
+    this.button.classList.remove(this.settings.inactiveButtonClass);
+    this.button.disabled = false;
   }
-  _disableButton(button) {
-    button.classList.add(this.settings.inactiveButtonClass);
-    button.disabled = true;
+  disableButton() {
+      this.button.classList.add(this.settings.inactiveButtonClass);
+      this.button.disabled = true;
   }
   _toggleButton = () => {
-    const button = this.formElement.querySelector(
-      this.settings.submitButtonSelector
-    );
     if (this._hasValidInputs()) {
-      this._enableButton(button);
+      this.enableButton();
     } else {
-      this._disableButton(button);
+      this.disableButton();
     }
   };
   _showInputError = (input) => {
