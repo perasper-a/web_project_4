@@ -59,23 +59,20 @@ openEditPopupButton.addEventListener("click", function () {
   openedPopup(profilePopup);
   inputName.value = profileName.textContent;
   inputJob.value = profileJob.textContent;
-  profileFormValidator.resetFormErrors();
+  profileFormValidator.resetValidation();
 });
 
 openAddCardPopupButton.addEventListener("click", function () {
   openedPopup(addCardPopup);
   addCardPopupForm.reset();
-  addCardFormValidator.disableButton();
-  addCardFormValidator.resetFormErrors();
+  addCardFormValidator.resetValidation();
  
 });
-// find all close buttons
-const closeButtons = document.querySelectorAll('.popup__exit');
 
+// Close Buttons
+const closeButtons = document.querySelectorAll('.popup__exit');
 closeButtons.forEach((button) => {
-  // find the closest popup 
   const popup = button.closest('.popup');
-  // set the listener
   button.addEventListener('click', () => closePopup(popup));
 });
 
@@ -120,6 +117,8 @@ const renderCard = (data, cardsList) => {
 initialCards.forEach((data) => {
   renderCard(data, cardsList);
 });
+
+
 
 
 
