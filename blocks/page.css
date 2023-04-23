@@ -1,39 +1,32 @@
 .page {
-  background-color: #000;
+  background-color: #000000;
+  max-width: 1280px;
   background-position: center;
   margin: 0 auto;
-  max-width: 1280px;
   height: 100%;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-family: "Inter", Arial, sans-serif;
 }
-
-.page__container {
+.page__content {
   max-width: 880px;
-  margin: 0 auto;
-  font-weight: normal;
+  background-size: cover;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 400;
   font-size: 18px;
-  color: #fff;
+  line-height: 21.78px;
+  color: aliceblue;
+  margin: 0 auto;
 }
-
-@media screen and (max-width: 951px) {
-  .page__container {
-    padding-left: 30px;
-    padding-right: 30px;
+@media screen and (max-width: 960px) {
+  .page {
+    max-width: 768px;
+  }
+  .page__content {
+    max-width: 100%;
   }
 }
 
-@media screen and (max-width: 410px) {
-  .page__container {
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
-
-@media screen and (max-width: 321px) {
-  .page__container {
-    padding-left: 0;
-    padding-right: 0;
+@media screen and (max-width: 600px) {
+  .page {
+    max-width: 320px;
   }
 }
