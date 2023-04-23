@@ -26,6 +26,7 @@ export const initialCards = [
 ];
 
 // buttons and other DOM elements
+
 export const openEditModalButton = document.querySelector(
   ".profile__name-button"
 );

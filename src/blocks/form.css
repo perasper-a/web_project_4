@@ -8,21 +8,18 @@
 .form__fieldset {
   border: none;
   max-width: 358px;
-  margin: 54px auto 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 29.74px;
   padding: 0;
+  margin: 54px auto 0;
 }
 .form__input {
   border: none;
   border-bottom: 1px solid #0001;
   padding-bottom: 13.26px;
-  padding-top: 0;
   font-size: 14px;
   line-height: 16.94px;
-  margin: 0;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
@@ -41,7 +38,7 @@
   border: none;
   border-radius: 2px;
 }
-.form__button:hover {
+.form__button:hover:not(:disabled) {
   opacity: 80%;
   cursor: pointer;
 }
@@ -73,7 +70,6 @@
   .form__fieldset {
     width: 238px;
     margin-top: 76px;
-    gap: 30px;
   }
   .form__input {
     padding-bottom: 9px;

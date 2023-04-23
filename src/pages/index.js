@@ -1,11 +1,11 @@
 // imports
-
-import FormValidator from "./FormValidator.js";
-import { Card } from "./Card.js";
-import { PopupWithForm } from "./PopupWithForm.js";
-import { popupWithImage } from "./PopupWithImage.js";
-import { Section } from "./section.js";
-import { UserInfo } from "./userInfo.js";
+import "./index.css";
+import FormValidator from "../scripts/FormValidator.js";
+import { Card } from "../scripts/Card.js";
+import { PopupWithForm } from "../scripts/PopupWithForm.js";
+import { PopupWithImage } from "../scripts/PopupWithImage.js";
+import { Section } from "../scripts/Section.js";
+import { UserInfo } from "../scripts/UserInfo.js";
 import {
   initialCards,
   openEditModalButton,
@@ -15,7 +15,7 @@ import {
   addCardModalForm,
   inputName,
   inputJob,
-} from "./constants.js";
+} from "../utils/constants.js";
 
 const settings = {
   inputSelector: ".form__input",
@@ -48,7 +48,7 @@ const addProfilePopup = new PopupWithForm(
 );
 addProfilePopup.setEventListeners();
 
-const imagePopup = new popupWithImage(".popup_type_preview");
+const imagePopup = new PopupWithImage(".popup_type_preview");
 imagePopup.setEventListeners();
 
 // rendercard
@@ -59,7 +59,7 @@ const renderCard = (data) => {
   });
 
   const cardElement = card.createCard();
-  section.addItems(cardElement);
+  section.addItem(cardElement);
 };
 const section = new Section(
   { items: initialCards, renderer: renderCard },
@@ -83,7 +83,7 @@ openEditModalButton.addEventListener("click", function () {
 const addCardSubmitButton = document.querySelector(".form__button_disabled");
 openAddCardModalButton.addEventListener("click", function () {
   addCardPopup.open();
-  addCardFormValidator._disableButton(addCardSubmitButton, settings);
+  addCardFormValidator.disableButton(addCardSubmitButton, settings);
 
   addCardFormValidator.resetFormErrors(addCardModalForm, settings);
 });
