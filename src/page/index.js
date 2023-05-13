@@ -77,7 +77,7 @@ openEditModalButton.addEventListener("click", function () {
 
   inputName.value = profileData.name;
   inputJob.value = profileData.job;
-  profileFormValidator.resetFormErrors();
+  profileFormValidator.resetValidation();
 });
 
 const addCardSubmitButton = document.querySelector(".form__button_disabled");
@@ -85,7 +85,7 @@ openAddCardModalButton.addEventListener("click", function () {
   addCardPopup.open();
   addCardFormValidator.disableButton(addCardSubmitButton, settings);
 
-  addCardFormValidator.resetFormErrors(addCardModalForm, settings);
+  addCardFormValidator.resetValidation(addCardModalForm, settings);
 });
 
 // form

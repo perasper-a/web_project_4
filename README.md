@@ -1,29 +1,23 @@
-# Project 4:
-## Around the U.S.
-### By perasper-a via Practicum 
-v------------------------------------v
+# Project 4: Around The U.S.
 
-```
-      Λ _ Λ
-   (=චᆽච=)==∫
-     ˉ ˉ ˉ ˉ 
-```
+### Overview
 
-^------------------------------------^
-## Description
+- Figma
+- Project Features
+- GitHub Pages
 
-"Around the U.S" is an interactive web project, which allows you to showcase different photographs and customize your profile.
+**Figma**
 
-## Project Features 
+- [Link to the project in Figma](https://www.figma.com/file/SurN1jaeEQIhuZEDMhmWWf/Sprint-4-Around-The-U.S.-desktop-mobile?node-id=0%3A1)
 
-- Flex Layout
+**Project Features**
 
-- Grid Layout 
+- HTML semantics
+- Grid Layout
+- Flex
+- positioning
+- Web Responsive
+- Flat BEM
+- JAVA Script
 
-- JS functionality 
-
-- Web Resposiveness
-
-## Project link
-
-[From Hometown to Hometown](https://perasper-a.github.io/web_project_4/)
+- Link to Project https://bdangel1.github.io/se_project_aroundtheus/
