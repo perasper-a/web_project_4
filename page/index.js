@@ -1,12 +1,12 @@
 import './index.css';
 
 // imports
-import FormValidator from "../components/FormValidator1.js";
-import { Card } from "../components/Card1.js";
-import { PopupWithForm } from "../components/PopupWithForm1.js";
-import { PopupWithImage } from "../components/PopupWithImage1.js";
-import { Section } from "../components/Section1.js";
-import { UserInfo } from "../components/UserInfo1.js";
+import FormValidator from "../components/FormValidator.js";
+import { Card } from "../components/Card.js";
+import { PopupWithForm } from "../components/PopupWithForm.js";
+import { PopupWithImage } from "../components/PopupWithImage.js";
+import { Section } from "../components/Section.js";
+import { UserInfo } from "../components/UserInfo.js";
 import {
   initialCards,
   openEditModalButton,
@@ -56,15 +56,20 @@ const imagePopup = new PopupWithImage(popupImagePreviewSelector);
 imagePopup.setEventListeners();
 
 // rendercard
-
-const renderCard = (data) => {
+function createCard(data) {
   const card = new Card(data, cardTemplateSelector, () => {
     imagePopup.open(data.name, data.link);
   });
 
   const cardElement = card.createCard();
+  return cardElement;
+}
+
+const renderCard = (data) => {
+  const cardElement = createCard(data);
   section.addItem(cardElement);
 };
+
 const section = new Section(
   { items: initialCards, renderer: renderCard },
   cardsListSelector
@@ -78,17 +83,15 @@ const userInfo = new UserInfo({
 openEditModalButton.addEventListener("click", function () {
   const profileData = userInfo.getUserInfo();
   addProfilePopup.open();
-
-  inputName.value = profileData.name;
-  inputJob.value = profileData.job;
-  profileFormValidator.resetFormErrors();
+  addProfilePopup.setInputValues(profileData);
+  profileFormValidator.resetValidation(); 
 });
 
 openAddCardModalButton.addEventListener("click", function () {
   addCardPopup.open();
   
   addCardFormValidator.disableButton();
-  addCardFormValidator.resetFormErrors();
+  addCardFormValidator.resetValidation();
 });
 
 // form

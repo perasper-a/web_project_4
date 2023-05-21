@@ -1,8 +1,17 @@
 {
   "devDependencies": {
+    "@babel/core": "^7.21.8",
+    "@babel/preset-env": "^7.21.5",
+    "01": "^0.0.1",
+    "autoprefixer": "^10.4.14",
+    "babel-loader": "^9.1.2",
+    "clean-webpack-plugin": "^4.0.0",
     "css-loader": "^6.7.4",
+    "cssnano": "^6.0.1",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.1",
+    "mini-css-extract-plugin": "^2.7.6",
+    "postcss-loader": "^7.3.0",
     "style-loader": "^3.3.3",
     "webpack": "^5.83.1",
     "webpack-cli": "^5.1.1",
@@ -23,6 +32,7 @@
     "clone-deep": "^4.0.1",
     "colorette": "^2.0.20",
     "commander": "^2.20.3",
+    "core-js": "^3.30.2",
     "cross-spawn": "^7.0.3",
     "electron-to-chromium": "^1.4.402",
     "enhanced-resolve": "^5.14.0",
@@ -95,7 +105,7 @@
     "wildcard": "^2.0.1"
   },
   "scripts": {
-    "build": "rm -rf dist && webpack --mode production",
+    "build": "webpack --mode production",
     "dev": "webpack serve --mode development"
   },
   "author": "",
