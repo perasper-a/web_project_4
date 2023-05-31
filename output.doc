@@ -1,0 +1,70 @@
+Folder PATH listing for volume Windows
+Volume serial number is 06D9-9B2A
+C:.
+³   .gitignore
+³   babel.config.js
+³   output.doc
+³   package-lock.json
+³   package.json
+³   postcss.config.js
+³   webpack.config.js
+³   
+ÀÄÄÄsrc
+    ³   index.html
+    ³   
+    ÃÄÄÄblocks
+    ³       card.css
+    ³       cards.css
+    ³       footer.css
+    ³       form.css
+    ³       header.css
+    ³       page.css
+    ³       popup.css
+    ³       profile.css
+    ³       
+    ÃÄÄÄcomponents
+    ³       Card.js
+    ³       FormValidator.js
+    ³       Popup.js
+    ³       PopupWithForm.js
+    ³       PopupWithImage.js
+    ³       Section.js
+    ³       UserInfo.js
+    ³       
+    ÃÄÄÄimages
+    ³       add.svg
+    ³       Avatar.png
+    ³       blkheart.svg
+    ³       Close-Icon.svg
+    ³       edit.svg
+    ³       Ellipse.png
+    ³       heart.svg
+    ³       kirill-pershin-baldMountains.png
+    ³       kirill-pershin-Lago.png
+    ³       kirill-pershin-LakeLouise.png
+    ³       kirill-pershin-Latemer.png
+    ³       kirill-pershin-venoise.png
+    ³       kirill-pershin-yosmite.png
+    ³       profile.jpg
+    ³       Trash.svg
+    ³       Vector.svg
+    ³       
+    ÃÄÄÄpage
+    ³       index.css
+    ³       index.js
+    ³       
+    ÃÄÄÄutils
+    ³       constants.js
+    ³       
+    ÀÄÄÄvendor
+        ³   normalize.css
+        ³   
+        ÀÄÄÄfonts
+                fonts.css
+                Inter-Black.woff
+                Inter-Black.woff2
+                Inter-Medium.woff
+                Inter-Medium.woff2
+                Inter-Regular.woff
+                Inter-Regular.woff2
+                

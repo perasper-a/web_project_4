@@ -64,6 +64,12 @@
 .card__like-button_filled {
   background-image: url(../images/blkheart.svg);
 }
+
+.card__likes-count {
+  display: flex;
+  justify-content: center;
+}
+
 @media screen and (max-width: 960px) {
   .card {
     width: 363px;

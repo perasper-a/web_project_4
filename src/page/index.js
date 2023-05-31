@@ -1,6 +1,7 @@
-import './index.css';
-
 // imports
+import { PopupWithConfirmation } from "../components/PopupWithConfirmation.js";
+import { api } from "../components/Api.js";
+import "./index.css";
 import FormValidator from "../components/FormValidator.js";
 import { Card } from "../components/Card.js";
 import { PopupWithForm } from "../components/PopupWithForm.js";
@@ -8,7 +9,6 @@ import { PopupWithImage } from "../components/PopupWithImage.js";
 import { Section } from "../components/Section.js";
 import { UserInfo } from "../components/UserInfo.js";
 import {
-  initialCards,
   openEditModalButton,
   openAddCardModalButton,
   cardsList,
@@ -16,89 +16,183 @@ import {
   addCardModalForm,
   inputName,
   inputJob,
-  settings,
-  popupAddCardSelector,
-  popupProfileSelector,
-  popupImagePreviewSelector,
-  cardTemplateSelector,
-  cardsListSelector,
-  profileNameSelector,
-  profileJobSelector,
-  addCardSubmitButton,
+  avatar,
+  avatarWindow,
 } from "../utils/constants.js";
 
-
-
-// instances
-
-const handleAddCardSubmit = (data) => {
-  renderCard({ name: data["title"], link: data["link"] }, cardsList);
-  addCardPopup.close();
+const settings = {
+  inputSelector: ".form__input",
+  submitButtonSelector: ".form__button",
+  inactiveButtonClass: "form__button_disabled",
+  inputErrorClass: "form__input_type-error",
+  errorClass: "form__input-error",
 };
-const addCardPopup = new PopupWithForm(
-  popupAddCardSelector,
-  handleAddCardSubmit
-);
-addCardPopup.setEventListeners();
+
+// promise
+let userId;
+Promise.all([api.getUserInfo(), api.getCards()])
+  .then(([userData, cards]) => {
+    userId = userData._id;
+    userInfo.setUserInfo(userData.name, userData.about);
+    userInfo.setAvatar(userData.avatar);
+    section.renderItems(cards);
+  })
+  .catch(console.log);
+
+// Handlers
+const handleAddCardSubmit = (data) => {
+  addCardPopup.changeText("saving...");
+  api
+    .addCard({ name: data["title"], link: data.link })
+    .then((res) => {
+      renderCard(res, cardsList);
+      addCardPopup.close();
+    })
+    .catch(console.log)
+    .finally(() => {
+      addCardPopup.changeText("save");
+    });
+};
 
 const handleProfileFormSubmit = (data) => {
-  userInfo.setUserInfo(data.name, data.job);
-  addProfilePopup.close();
+  addProfilePopup.changeText("saving...");
+  api
+    .editProfile({ name: data.name, about: data.job })
+    .then((res) => {
+      userInfo.setUserInfo(res.name, res.about);
+      addProfilePopup.close();
+    })
+    .catch(console.log)
+    .finally(() => {
+      addProfilePopup.changeText("save");
+    });
 };
+
+const handleAvatarFormSubmit = (data) => {
+  api
+    .editAvatar(data.link)
+    .then((res) => {
+      userInfo.setUserInfo(res.name, res.about, res.avatar);
+      avatarChangePopup.close();
+    })
+    .catch(console.log);
+};
+
+const handleDeleteClick = (card) => {
+  confirmDeletePopup.open();
+
+  confirmDeletePopup.changeHandleSubmit(() => {
+    confirmDeletePopup.changeText("loading...");
+
+    api
+      .deleteCard(card.getId())
+      .then(() => {
+        card.removeCard();
+        confirmDeletePopup.close();
+      })
+      .finally(() => {
+        confirmDeletePopup.changeText("yes");
+      });
+  });
+};
+
+const handleLikeClick = (card) => {
+  if (card.isLiked()) {
+    api
+      .removeLike(card.getId())
+      .then((res) => {
+        card.renderLikes(res.likes);
+      })
+      .catch(console.log);
+  } else {
+    api.addLike(card.getId()).then((res) => {
+      card.renderLikes(res.likes);
+    });
+  }
+};
+
+// instances
+const addCardPopup = new PopupWithForm(
+  ".popup_type_add-card",
+  handleAddCardSubmit
+);
 
 const addProfilePopup = new PopupWithForm(
-  popupProfileSelector,
+  ".popup_type_profile",
   handleProfileFormSubmit
 );
-addProfilePopup.setEventListeners();
 
-const imagePopup = new PopupWithImage(popupImagePreviewSelector);
-imagePopup.setEventListeners();
+const imagePopup = new PopupWithImage(".popup_type_preview");
+
+const avatarChangePopup = new PopupWithForm(
+  ".popup_type_avatar-change",
+  handleAvatarFormSubmit
+);
+
+const confirmDeletePopup = new PopupWithConfirmation(
+  ".popup_type_confirm-delete"
+);
+
+const userInfo = new UserInfo({
+  profileNameSelector: ".profile__name-info",
+  profileJobSelector: ".profile__info-job",
+  userAvatarSelector: ".profile__image",
+});
 
 // rendercard
-function createCard(data) {
-  const card = new Card(data, cardTemplateSelector, () => {
-    imagePopup.open(data.name, data.link);
-  });
+const cardTemplateSelector = "#card-template";
+const renderCard = (data) => {
+  const card = new Card(
+    data,
+    userId,
+    cardTemplateSelector,
+    () => {
+      imagePopup.open(data.name, data.link);
+    },
+    () => handleLikeClick(card),
+    () => handleDeleteClick(card)
+  );
 
   const cardElement = card.createCard();
-  return cardElement;
-}
-
-const renderCard = (data) => {
-  const cardElement = createCard(data);
   section.addItem(cardElement);
 };
-
-const section = new Section(
-  { items: initialCards, renderer: renderCard },
-  cardsListSelector
-);
-section.renderItems();
-const userInfo = new UserInfo({
-  profileNameSelector: profileNameSelector,
-  profileJobSelector: profileJobSelector,
-});
-// eventHandlers
-openEditModalButton.addEventListener("click", function () {
-  const profileData = userInfo.getUserInfo();
-  addProfilePopup.open();
-  addProfilePopup.setInputValues(profileData);
-  profileFormValidator.resetValidation(); 
-});
-
-openAddCardModalButton.addEventListener("click", function () {
-  addCardPopup.open();
-  
-  addCardFormValidator.disableButton();
-  addCardFormValidator.resetValidation();
-});
+const section = new Section({ renderer: renderCard }, ".cards__list");
 
 // form
 const profileFormValidator = new FormValidator(settings, profileModalForm);
 const addCardFormValidator = new FormValidator(settings, addCardModalForm);
+const avatarFormValidator = new FormValidator(settings, avatarWindow);
+
 profileFormValidator.enableValidation();
 addCardFormValidator.enableValidation();
+avatarFormValidator.enableValidation();
 
+// setEvenListeners
+avatarChangePopup.setEventListeners();
+imagePopup.setEventListeners();
+confirmDeletePopup.setEventListeners();
+addProfilePopup.setEventListeners();
+addCardPopup.setEventListeners();
 
+// eventHandlers
+openEditModalButton.addEventListener("click", function () {
+  const profileData = userInfo.getUserInfo();
+  addProfilePopup.open();
 
+  inputName.value = profileData.name;
+  inputJob.value = profileData.job;
+  profileFormValidator.resetFormErrors();
+});
+
+openAddCardModalButton.addEventListener("click", function () {
+  addCardPopup.open();
+  addCardFormValidator.resetFormErrors(addCardModalForm, settings);
+  // addCardFormValidator.disableButton(addCardModalForm, settings);
+});
+avatar.addEventListener("click", () => {
+  avatarChangePopup.open();
+  // const avatarData = userInfo.getUserInfo();
+  // inputName.value = avatarData.link;
+
+  avatarFormValidator.resetFormErrors();
+});

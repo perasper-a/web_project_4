@@ -1,27 +1,18 @@
-import { Popup } from "./Popup.js";
+import { Popup } from "./Popup";
 
-export class PopupWithForm extends Popup {
+export class PopupWithConfirmation extends Popup {
   constructor(popupSelector, handleSubmit) {
     super(popupSelector);
     this._handleSubmit = handleSubmit;
     this._form = this._popup.querySelector(".popup__form");
     this._submitButton = this._popup.querySelector(".form__button");
   }
-  _getInputValues() {
-    const values = {};
-    const inputs = [...this._form.querySelectorAll(".form__input")];
-    inputs.forEach((input) => {
-      const key = input.name;
-      const value = input.value;
-      values[key] = value;
-    });
-    return values;
-  }
+
   setEventListeners() {
     super.setEventListeners();
     this._form.addEventListener("submit", (e) => {
       e.preventDefault();
-      this._handleSubmit(this._getInputValues());
+      this._handleSubmit();
     });
   }
   changeHandleSubmit(newSubmit) {
