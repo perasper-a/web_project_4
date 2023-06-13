@@ -186,8 +186,7 @@ openEditModalButton.addEventListener("click", function () {
 
 openAddCardModalButton.addEventListener("click", function () {
   addCardPopup.open();
-  addCardFormValidator.resetFormErrors(addCardModalForm, settings);
-  // addCardFormValidator.disableButton(addCardModalForm, settings);
+  addCardFormValidator.resetValidation();
 });
 avatar.addEventListener("click", () => {
   avatarChangePopup.open();
@@ -195,4 +194,5 @@ avatar.addEventListener("click", () => {
   // inputName.value = avatarData.link;
 
   avatarFormValidator.resetFormErrors();
+  avatarFormValidator.resetValidation();
 });

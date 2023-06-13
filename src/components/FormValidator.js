@@ -13,6 +13,10 @@ class FormValidator {
       this._hideInputError(input);
     });
   }
+  resetValidation() {
+    this._toggleButton();
+    this.resetFormErrors();
+  }
 
   _hasValidInputs = () =>
     this._inputList.every((input) => input.validity.valid === true);

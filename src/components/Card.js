@@ -1,3 +1,5 @@
+import { api } from './Api.js';
+
 export class Card {
   constructor(
     data,
@@ -76,6 +78,30 @@ export class Card {
       this._handleDeleteClick(this)
     );
 
-    this._cardLikeButton.addEventListener("click", this._handleLikeButton);
+    this._cardLikeButton.addEventListener('click', () => {
+      if (this.isLiked()) {
+        api.removeLike(this._id)
+          .then((updatedCard) => {
+            this._cardLikeButton.classList.remove('card__like-button_filled');
+            this._likes = updatedCard.likes;
+            cardLikeCount.textContent = this._likes.length;
+          })
+          .catch((error) => {
+            console.error(`Error: ${error}`);
+          });
+      } else {
+        api.addLike(this._id)
+          .then((updatedCard) => {
+            this._cardLikeButton.classList.add('card__like-button_filled');
+            this._likes = updatedCard.likes;
+            cardLikeCount.textContent = this._likes.length;
+          })
+          .catch((error) => {
+            console.error(`Error: ${error}`);
+          });
+      }
+    });
+    
+    
   };
 }
