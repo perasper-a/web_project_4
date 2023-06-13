@@ -56,8 +56,8 @@ export class Card {
     this._cardLikeButton =
       this._cardElement.querySelector(".card__like-button");
     const likesAmount = this._likes.length;
-    const cardLikeCount = this._cardElement.querySelector(".card__likes-count");
-    cardLikeCount.textContent = likesAmount;
+    this._cardLikeCount = this._cardElement.querySelector(".card__likes-count");
+    this._cardLikeCount.textContent = likesAmount;
     this._cardImage.style.backgroundImage = `url(${this._data.link})`;
     this._cardElement.querySelector(".card__title").textContent =
       this._data.name;
@@ -84,7 +84,7 @@ export class Card {
           .then((updatedCard) => {
             this._cardLikeButton.classList.remove('card__like-button_filled');
             this._likes = updatedCard.likes;
-            cardLikeCount.textContent = this._likes.length;
+            this._cardLikeCount.textContent = this._likes.length;
           })
           .catch((error) => {
             console.error(`Error: ${error}`);
@@ -94,7 +94,7 @@ export class Card {
           .then((updatedCard) => {
             this._cardLikeButton.classList.add('card__like-button_filled');
             this._likes = updatedCard.likes;
-            cardLikeCount.textContent = this._likes.length;
+            this._cardLikeCount.textContent = this._likes.length;
           })
           .catch((error) => {
             console.error(`Error: ${error}`);

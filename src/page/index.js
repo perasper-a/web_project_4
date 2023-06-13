@@ -20,6 +20,12 @@ import {
   avatarWindow,
 } from "../utils/constants.js";
 
+const userInfo = new UserInfo({
+  profileNameSelector: ".profile__name-info",
+  profileJobSelector: ".profile__info-job",
+  userAvatarSelector: ".profile__image",
+});
+
 const settings = {
   inputSelector: ".form__input",
   submitButtonSelector: ".form__button",
@@ -34,6 +40,7 @@ Promise.all([api.getUserInfo(), api.getCards()])
   .then(([userData, cards]) => {
     userId = userData._id;
     userInfo.setUserInfo(userData.name, userData.about);
+    console.log(userData);
     userInfo.setAvatar(userData.avatar);
     section.renderItems(cards);
   })
@@ -72,7 +79,8 @@ const handleAvatarFormSubmit = (data) => {
   api
     .editAvatar(data.link)
     .then((res) => {
-      userInfo.setUserInfo(res.name, res.about, res.avatar);
+      userInfo.setUserInfo(res.name, res.about);
+      userInfo.setAvatar(res.avatar);
       avatarChangePopup.close();
     })
     .catch(console.log);
@@ -133,11 +141,7 @@ const confirmDeletePopup = new PopupWithConfirmation(
   ".popup_type_confirm-delete"
 );
 
-const userInfo = new UserInfo({
-  profileNameSelector: ".profile__name-info",
-  profileJobSelector: ".profile__info-job",
-  userAvatarSelector: ".profile__image",
-});
+
 
 // rendercard
 const cardTemplateSelector = "#card-template";

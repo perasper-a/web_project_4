@@ -16,6 +16,7 @@ export class UserInfo {
     this._profileJob.textContent = job;
   }
   setAvatar(avatar) {
-    this._avatarEl.src = avatar;
+    console.log(this._avatarEl);
+    this._avatarEl.setAttribute("src", avatar);
   }
 }
