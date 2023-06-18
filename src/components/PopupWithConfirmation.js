@@ -21,8 +21,8 @@ export class PopupWithConfirmation extends Popup {
   changeText(text) {
     this._submitButton.textContent = text;
   }
-  close() {
-    super.close();
-    this._form.reset();
-  }
+ // close() {
+  //  super.close();
+  //  this._form.reset();
+  //}
 }
