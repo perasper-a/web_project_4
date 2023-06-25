@@ -9,26 +9,36 @@
   gap: 30px;
   position: relative;
 }
-
+.profile__image__wrapper{
+  display: flex;
+    position: relative;
+    max-width: 120px;
+    max-height: 120px;
+}
 .profile__image {
-  max-width: 120px;
-  margin: 0;
-  display: block;
-  height: 100%;
   border-radius: 60%;
   cursor: pointer;
-  transition: 0.6s ease-in-out;
+  display: block;
+  margin: 0;
+  max-height: 100%;
+  max-width: 100%;
+  transition: .6s ease-in-out;
+}
+.profile__image__wrapper:hover .profile__change-button{
+  display: block;
 }
 
-
 .profile__change-button {
-  z-index: 1;
-  display: none;
+
   background-color: transparent;
   border: none;
+  bottom: 50%;
+  left: 50%;
+  display: none;
+  transform: translate(-50%, 50%);
   position: absolute;
-  left: 23%;
-  bottom: 48%;
+  z-index: 1;
+  padding: 0;
   
 }
 

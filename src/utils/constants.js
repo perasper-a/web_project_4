@@ -25,6 +25,18 @@ export const initialCards = [
   },
 ];
 
+export const settings = {
+  inputSelector: ".form__input",
+
+  submitButtonSelector: ".form__button",
+
+  inactiveButtonClass: "form__button_disabled",
+
+  inputErrorClass: "form__input_type-error",
+
+  errorClass: "form__input-error",
+};
+
 // buttons and other DOM elements
 
 export const openEditModalButton = document.querySelector(

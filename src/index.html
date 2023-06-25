@@ -20,17 +20,19 @@
       <main>
         <section class="profile">
           <div class="profile__avatar">
-            <div class="profile__change-hide">
-              <button type="button" class="profile__change-button">
-                <img src="<%=require('./images/edit.svg')%>" alt="Edit icon - Pen" class="profile__change-button-icon">
-                </button>
-            </div>
+            <div class="profile__image__wrapper">
+              <div class="profile__change-hide">
+                <button type="button" class="profile__change-button">
+                  <img src="<%=require('./images/edit.svg')%>" alt="Edit icon - Pen" class="profile__change-button-icon">
+                  </button>
+              </div>
             <img
               src="<%=require('./images/profile.jpg')%>"
               alt="profile
             pic"
               class="profile__image"
             />
+          </div>
             <div class="profile__info">
               <div class="profile__name">
                 <h1 class="profile__name-info">Jacques Cousteau</h1>
@@ -46,7 +48,7 @@
         </section>
       </main>
       <footer class="footer">
-        <p class="footer__copyright">© 2021 Around The U.S.</p>
+        <p class="footer__copyright">Â© 2021 Around The U.S.</p>
       </footer>
       <div class="popup popup_type_profile">
         <div class="popup__content">
