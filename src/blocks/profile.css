@@ -9,7 +9,7 @@
   gap: 30px;
   position: relative;
 }
-.profile__image__wrapper{
+.profile__avatar_wrapper{
   display: flex;
     position: relative;
     max-width: 120px;
@@ -24,7 +24,7 @@
   max-width: 100%;
   transition: .6s ease-in-out;
 }
-.profile__image__wrapper:hover .profile__change-button{
+.profile__avatar_wrapper:hover .profile__change-button{
   display: block;
 }
 
