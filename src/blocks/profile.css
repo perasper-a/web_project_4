@@ -9,7 +9,7 @@
   gap: 30px;
   position: relative;
 }
-.profile__avatar_wrapper{
+.profile__avatar__wrapper{
   display: flex;
     position: relative;
     max-width: 120px;
