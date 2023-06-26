@@ -9,12 +9,7 @@
   gap: 30px;
   position: relative;
 }
-.profile__avatar__wrapper{
-  display: flex;
-    position: relative;
-    max-width: 120px;
-    max-height: 120px;
-}
+
 .profile__image {
   border-radius: 60%;
   cursor: pointer;
