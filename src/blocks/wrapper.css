@@ -4,3 +4,7 @@
       max-width: 120px;
       max-height: 120px;
   }
+
+  .wrapper:hover .profile__change-button{
+    display: block;
+  }

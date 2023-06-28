@@ -19,9 +19,7 @@
   max-width: 100%;
   transition: .6s ease-in-out;
 }
-.profile__avatar_wrapper:hover .profile__change-button{
-  display: block;
-}
+
 
 .profile__change-button {
 

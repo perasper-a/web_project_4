@@ -60,6 +60,7 @@ Promise.all([api.getUserInfo(), api.getCards()])
 
     section.renderItems(cards);
   })
+  .catch(console.log);
 
 
 
@@ -150,14 +151,18 @@ const handleDeleteClick = (card) => {
 };
 
 const handleLikeClick = (card) => {
+  let promise;
   if (card.isLiked()) {
-    return api.removeLike(card.getId())
+    promise = api.removeLike(card.getId());
   } else {
-    return api.addLike(card.getId())
+    promise = api.addLike(card.getId());
   }
+  promise.catch(console.log);
 };
 
+
 // instances
+
 
 const addCardPopup = new PopupWithForm(
   ".popup_type_add-card",
@@ -187,7 +192,7 @@ const confirmDeletePopup = new PopupWithConfirmation(
 // rendercard
 
 function createCard(data, userId) {
-  return new Card(
+  const card = new Card(
     data,
     userId,
     cardTemplateSelector,
@@ -205,6 +210,8 @@ function createCard(data, userId) {
     (cardId) => api.addLike(cardId),
     (cardId) => api.removeLike(cardId)
   );
+  
+  return card;
 }
 
 const cardTemplateSelector = "#card-template";
